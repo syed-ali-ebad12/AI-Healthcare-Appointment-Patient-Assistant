@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carely AI healthcare appointment and patient assistant." />
+  <title>Carely — Healthcare Appointment Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">✚</div><span>carely</span></div>
+      <div class="workspace-label">Workspace</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-section="overview"><span>⌂</span> Overview</button>
+        <button class="nav-item" data-section="appointments"><span>▣</span> Appointments <b class="nav-count">4</b></button>
+        <button class="nav-item" data-section="patients"><span>♙</span> Patients</button>
+        <button class="nav-item" data-section="doctors"><span>⚕</span> Doctors</button>
+        <button class="nav-item" data-section="messages"><span>◌</span> Messages <b class="nav-count pink">3</b></button>
+      </nav>
+      <div class="workspace-label">Manage</div>
+      <nav class="main-nav" aria-label="Management navigation">
+        <button class="nav-item" data-section="analytics"><span>▥</span> Analytics</button>
+        <button class="nav-item" data-section="settings"><span>⚙</span> Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="upgrade-card"><div class="sparkle">✦</div><strong>Carely AI</strong><p>Let your assistant handle the busywork.</p><button id="learnBtn">Learn more <span>→</span></button></div>
+        <div class="user-mini"><div class="avatar avatar-purple">JD</div><div><strong>Jordan Davis</strong><small>Administrator</small></div><button class="icon-btn" aria-label="User menu">•••</button></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button><div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageTitle">Overview</strong></div><div class="top-actions"><button class="icon-btn notification" aria-label="Notifications">♧<i></i></button><div class="avatar avatar-purple">JD</div></div></header>
+      <div class="page-wrap">
+        <section class="section-view active" id="overview">
+          <div class="welcome-row"><div><p class="eyebrow">MONDAY, SEPTEMBER 08, 2025</p><h1>Good morning, Jordan <span>✦</span></h1><p class="subheading">Here’s what’s happening with your clinic today.</p></div><button class="primary-btn" id="newAppointmentBtn">＋ New appointment</button></div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>Appointments today</span><span class="stat-icon mint">▣</span></div><div class="stat-number">24</div><div class="stat-meta up">↗ 12.5% <span>vs last week</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Total patients</span><span class="stat-icon lavender">♙</span></div><div class="stat-number">1,284</div><div class="stat-meta up">↗ 8.2% <span>vs last month</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Pending requests</span><span class="stat-icon peach">◷</span></div><div class="stat-number">08</div><div class="stat-meta neutral"><span>Needs your attention</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Avg. wait time</span><span class="stat-icon blue">⌁</span></div><div class="stat-number">14<span class="unit"> min</span></div><div class="stat-meta down">↘ 4.3% <span>vs last week</span></div></article>
+          </div>
+          <div class="content-grid"><section class="panel appointments-panel"><div class="panel-heading"><div><h2>Today’s appointments</h2><p>Monday, September 08</p></div><button class="text-btn" data-section="appointments">View all <span>→</span></button></div><div class="appointment-list" id="appointmentList"></div></section><section class="panel assistant-panel"><div class="assistant-heading"><div class="assistant-orb">✦</div><div><h2>Carely AI</h2><p>Your intelligent clinic assistant</p></div><span class="online-dot">●</span></div><div class="assistant-message"><div class="assistant-avatar">✦</div><div><p>Good morning, Jordan! I’ve reviewed today’s schedule. You have <strong>8 pending requests</strong> and 2 follow-ups that may need attention.</p><button id="reviewBtn">Review suggestions <span>→</span></button></div></div><div class="quick-prompts"><span>Ask Carely</span><button>“Who is next?”</button><button>“Show cancellations”</button></div><div class="chat-input"><input id="chatInput" placeholder="Ask anything about your clinic..."/><button id="chatBtn" aria-label="Send message">↑</button></div></section></div>
+          <div class="bottom-grid"><section class="panel activity-panel"><div class="panel-heading"><div><h2>Recent activity</h2><p>Latest updates across your clinic</p></div><button class="icon-btn">•••</button></div><div class="activity-list"><div class="activity"><div class="activity-icon green">✓</div><div><strong>Appointment confirmed</strong><p>Sarah Mitchell confirmed with Dr. Emily Carter</p></div><time>8 min ago</time></div><div class="activity"><div class="activity-icon purple">♙</div><div><strong>New patient registered</strong><p>Michael Brown joined your clinic</p></div><time>24 min ago</time></div><div class="activity"><div class="activity-icon orange">↻</div><div><strong>Appointment rescheduled</strong><p>Olivia Wilson moved to Sep 10, 2:30 PM</p></div><time>1 hr ago</time></div></div></section><section class="panel doctors-panel"><div class="panel-heading"><div><h2>Doctor availability</h2><p>Live status for today</p></div><button class="text-btn" data-section="doctors">View all <span>→</span></button></div><div class="doctor-list"><div class="doctor"><div class="doctor-avatar cyan">EC</div><div><strong>Dr. Emily Carter</strong><small>Cardiology</small></div><span class="availability available">Available</span></div><div class="doctor"><div class="doctor-avatar yellow">RA</div><div><strong>Dr. Robert Adams</strong><small>Dermatology</small></div><span class="availability busy">In appointment</span></div><div class="doctor"><div class="doctor-avatar pink">SW</div><div><strong>Dr. Sophia Williams</strong><small>Neurology</small></div><span class="availability available">Available</span></div></div></section></div>
+        </section>
+        <section class="section-view" id="appointments"><div class="view-header"><div><p class="eyebrow">SCHEDULE</p><h1>Appointments</h1><p class="subheading">Manage your clinic’s upcoming visits.</p></div><button class="primary-btn" id="newAppointmentBtn2">＋ New appointment</button></div><section class="panel full-panel"><div class="toolbar"><div class="search-box">⌕ <input id="appointmentSearch" placeholder="Search appointments..." /></div><select><option>All statuses</option><option>Confirmed</option><option>Pending</option></select><button class="secondary-btn">Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Patient</th><th>Doctor</th><th>Date & time</th><th>Type</th><th>Status</th></tr></thead><tbody id="appointmentTable"></tbody></table></div></section></section>
+        <section class="section-view" id="patients"><div class="view-header"><div><p class="eyebrow">PATIENT DIRECTORY</p><h1>Patients</h1><p class="subheading">A secure overview of your patient community.</p></div><button class="primary-btn">＋ Add patient</button></div><section class="panel full-panel patient-cards"><div class="patient-summary"><span class="stat-icon lavender">♙</span><div><strong>1,284</strong><small>Total patients</small></div></div><div class="patient-summary"><span class="stat-icon mint">↗</span><div><strong>36</strong><small>New this month</small></div></div><div class="patient-summary"><span class="stat-icon peach">◷</span><div><strong>92%</strong><small>Returning patients</small></div></div></section></section>
+        <section class="section-view" id="doctors"><div class="view-header"><div><p class="eyebrow">CARE TEAM</p><h1>Doctors</h1><p class="subheading">Manage clinicians, schedules, and availability.</p></div><button class="primary-btn">＋ Add doctor</button></div><section class="panel full-panel doctor-directory"><div class="directory-row"><div class="doctor-avatar cyan">EC</div><div><strong>Dr. Emily Carter</strong><small>Cardiology · 14 years experience</small></div><span class="availability available">Available today</span><button class="icon-btn">•••</button></div><div class="directory-row"><div class="doctor-avatar yellow">RA</div><div><strong>Dr. Robert Adams</strong><small>Dermatology · 9 years experience</small></div><span class="availability busy">In appointment</span><button class="icon-btn">•••</button></div><div class="directory-row"><div class="doctor-avatar pink">SW</div><div><strong>Dr. Sophia Williams</strong><small>Neurology · 11 years experience</small></div><span class="availability available">Available today</span><button class="icon-btn">•••</button></div></section></section>
+        <section class="section-view" id="analytics"><div class="view-header"><div><p class="eyebrow">INSIGHTS</p><h1>Analytics</h1><p class="subheading">Understand how your clinic is performing.</p></div><button class="secondary-btn">This month⌄</button></div><section class="panel full-panel chart-panel"><div class="panel-heading"><div><h2>Appointments overview</h2><p>Completed appointments over the last 7 days</p></div></div><div class="fake-chart"><div class="chart-bars"><i style="height:44%"></i><i style="height:68%"></i><i style="height:52%"></i><i style="height:84%"></i><i style="height:62%"></i><i style="height:92%"></i><i style="height:76%"></i></div><div class="chart-labels"><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span></div></div></section></section>
+        <section class="section-view" id="messages"><div class="view-header"><div><p class="eyebrow">COMMUNICATIONS</p><h1>Messages</h1><p class="subheading">Keep up with patient conversations.</p></div></div><section class="panel full-panel empty-state"><div class="empty-icon">◌</div><h2>Your inbox is clear</h2><p>New patient messages and AI escalations will appear here.</p></section></section>
+        <section class="section-view" id="settings"><div class="view-header"><div><p class="eyebrow">WORKSPACE</p><h1>Settings</h1><p class="subheading">Configure your clinic workspace.</p></div></div><section class="panel full-panel settings-list"><button><span>Clinic profile</span><small>Update name, address, and contact details →</small></button><button><span>Notifications</span><small>Manage email and SMS preferences →</small></button><button><span>Team & permissions</span><small>Control access for staff members →</small></button></section></section>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="modalClose">×</button><p class="eyebrow">NEW VISIT</p><h2>Schedule an appointment</h2><p class="modal-subtitle">Create a booking for a patient in under a minute.</p><form id="appointmentForm"><label>Patient name<input name="patient" required placeholder="e.g. Alex Morgan" /></label><label>Doctor<select name="doctor"><option>Dr. Emily Carter</option><option>Dr. Robert Adams</option><option>Dr. Sophia Williams</option></select></label><div class="form-row"><label>Date<input name="date" type="date" required value="2025-09-08" /></label><label>Time<input name="time" type="time" required value="10:30" /></label></div><label>Appointment type<select name="type"><option>General consultation</option><option>Follow-up</option><option>Check-up</option></select></label><button class="primary-btn full-btn">Create appointment</button></form></div></div>
+  <div class="toast" id="toast">Appointment created successfully</div>
+  <script src="app.js"></script>
+</body>
+</html>
